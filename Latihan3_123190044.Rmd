@@ -1,0 +1,54 @@
+---
+title: "Modul3"
+author: "Alifia Rahma De Anissa"
+date: "9/28/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+library(dslabs)
+data(murders) 
+```
+## Nomor 1
+```{r }
+str(murders)
+```
+
+a. Terdiri dari 51 negara.(Benar)
+b. Data berisi tingkat pembunuhan pada 50 negara bagian dan DC.(Salah)
+c. Data berisi Nama negara bagian, singkatan dari nama negara bagian, wilayah
+negara bagian, dan populasi negara bagian serta jumlah total pembunuhan pada
+tahun 2010.(Benar)
+d. str tidak menunjukkan informasi yang relevan.(Salah)
+
+## Nomor 2
+ Nama Kolom yang digunakan dalam dataframe adalah state, abb, region, population, dan total.
+
+## Nomor 3
+```{r }
+a <- murders$abb;
+a;
+class(murders$abb) 
+
+```
+## Nomor 4
+```{r }
+b <- matrix(a, );
+b[,]
+
+```
+Variabel a dan b bernilai sama.
+
+## Nomor 5
+```{r }
+levels(murders$region);length(murders$region)
+
+```
+## Nomor 6
+```{r }
+table(murders$region)
+
+```
