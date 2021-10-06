@@ -1,0 +1,89 @@
+---
+title: "Latihan4_123190044"
+author: "Alifia Rahma De Anissa"
+date: "10/3/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+library(dslabs)
+data("murders")
+str(murders)
+```
+
+## 1
+
+```{r}
+pop <-sort(murders$population)
+pop[1]
+
+```
+
+## 2
+
+```{r}
+pop <- order(murders$population)
+pop[1]
+```
+
+
+## 3
+
+```{r}
+pop <-which.min(murders$population)
+pop
+```
+## 4
+
+```{r}
+pop <-which.min(murders$population)
+v<-murders$state
+v[pop]
+
+```
+## 5
+
+```{r}
+ranks <-rank(murders$population)
+state1<-(murders$state)
+my_df <- data.frame(state = state1, ranking = ranks) 
+my_df
+
+```
+
+
+## 6
+
+```{r}
+ranks <-rank(murders$population)
+ind <- order(ranks)
+state1<-(murders$state)
+my_df <- data.frame(state = state1, ranking = ind) 
+hasil <- my_df[ind,]
+hasil
+```
+
+## 7
+
+```{r}
+population_in_millions <- murders$population/10^6
+total_gun_murders <- murders$total
+skala <- log(population_in_millions, total_gun_murders)
+plot(skala)
+```
+
+
+## 8
+
+```{r}
+x <- with(murders, total)
+hist(x)
+
+```
+## 9
+
+```{r}
+murders$rate <- with(murders, total / population * 100000)
+boxplot(rate~population, data = murders)
+
+```
